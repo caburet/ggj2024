@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://cmfbya6chld2r"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_qdxt0"]
+[ext_resource type="Script" path="res://cam_gimbal.gd" id="3_3brae"]
+[ext_resource type="PackedScene" uid="uid://1lmbms4plvn2" path="res://3DGodotRobot.glb" id="3_xnbpi"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_vo3yj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xxe1a"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_qdxt0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("BoxMesh_vo3yj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_xxe1a")
+
+[node name="anim_gimbal" type="Node3D" parent="."]
+
+[node name="3DGodotRobot" parent="anim_gimbal" instance=ExtResource("3_xnbpi")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -0.5, 0)
+
+[node name="cam_gimbal" type="Node3D" parent="."]
+script = ExtResource("3_3brae")
+
+[node name="Camera3D" type="Camera3D" parent="cam_gimbal"]
+transform = Transform3D(1, 0, 0, 0, 0.869322, 0.494245, 0, -0.494245, 0.869322, 0, 2.81281, 5.40871)

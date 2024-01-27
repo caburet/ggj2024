@@ -1,0 +1,200 @@
+[gd_scene load_steps=20 format=3 uid="uid://b1kvxwo1uo87i"]
+
+[ext_resource type="PackedScene" uid="uid://cmfbya6chld2r" path="res://player.tscn" id="1_u2qkd"]
+[ext_resource type="PackedScene" uid="uid://dg1fpf1qwihll" path="res://coin.tscn" id="2_ugldq"]
+[ext_resource type="PackedScene" path="res://PlatformBlue.tscn" id="4_s7lpn"]
+[ext_resource type="Texture2D" uid="uid://o7id01tv5ban" path="res://texture/blood.png" id="4_tfqro"]
+[ext_resource type="PackedScene" uid="uid://bj568o4jf8px0" path="res://platform.tscn" id="4_ufbeh"]
+[ext_resource type="Texture2D" uid="uid://f2xsnngquu1n" path="res://texture/excavated_soil_wall_disp_4k.png" id="5_4uml4"]
+[ext_resource type="Script" path="res://Death.gd" id="5_8agac"]
+[ext_resource type="PackedScene" path="res://PlatformRed.tscn" id="5_jeu1v"]
+[ext_resource type="Script" path="res://axe_gimble.gd" id="8_aoo1w"]
+[ext_resource type="PackedScene" uid="uid://1lmbms4plvn2" path="res://3DGodotRobot.glb" id="8_p6vvf"]
+[ext_resource type="PackedScene" uid="uid://byu2ec2yymx3v" path="res://models/German Battle Axe.fbx" id="8_qc70s"]
+[ext_resource type="Script" path="res://CPUParticles3D.gd" id="9_12wjq"]
+[ext_resource type="Script" path="res://models/German Battle Axe.gd" id="10_gvfou"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_33f3p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b5ama"]
+albedo_texture = ExtResource("5_4uml4")
+
+[sub_resource type="BoxMesh" id="BoxMesh_b8e01"]
+material = SubResource("StandardMaterial3D_b5ama")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4qld6"]
+albedo_color = Color(0.6, 0.0392157, 0.247059, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_on0cq"]
+material = SubResource("StandardMaterial3D_4qld6")
+radius = 0.2
+height = 0.5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oddj4"]
+
+[node name="level1" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_u2qkd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.62362, 0.781727, 0, -0.781727, 0.62362, 0, 3.22223, 4.90777)
+shadow_enabled = true
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.735104, 0.529976, -0.422786, 0, 0.62362, 0.781727, 0.677954, 0.574651, -0.458426, 29.7426, 3.22223, -33.2962)
+shadow_enabled = true
+
+[node name="Coin1" parent="." instance=ExtResource("2_ugldq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, -1)
+
+[node name="floor" type="Node3D" parent="."]
+
+[node name="platform1" parent="floor" instance=ExtResource("4_ufbeh")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 1, -1.99177, -0.270668)
+
+[node name="platform2" parent="floor" instance=ExtResource("4_ufbeh")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, -1.0097, -9.39606)
+
+[node name="blood" type="Sprite3D" parent="floor/platform2"]
+transform = Transform3D(0.1, 0, 0, 0, -4.37114e-09, -0.1, 0, 0.1, -4.37114e-09, -0.5, 0.5, 0)
+visible = false
+texture = ExtResource("4_tfqro")
+
+[node name="platform3" parent="floor" instance=ExtResource("4_ufbeh")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, -0.902629, -17.7962)
+
+[node name="platform7" parent="floor" instance=ExtResource("4_ufbeh")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 47.0749, -1.0097, -11.0577)
+
+[node name="platform8" parent="floor" instance=ExtResource("4_ufbeh")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 47.0749, -0.902629, -19.4579)
+
+[node name="platform4" parent="floor" instance=ExtResource("4_ufbeh")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 1, -1.99177, -27.9652)
+
+[node name="platform5" parent="floor" instance=ExtResource("4_ufbeh")]
+transform = Transform3D(8, 0, 0, 0, 4, 0, 0, 0, 4, 16.954, -1.99177, -27.9652)
+
+[node name="platform6" parent="floor" instance=ExtResource("4_ufbeh")]
+transform = Transform3D(8, 0, 0, 0, 4, 0, 0, 0, 4, 50.8461, -1.99177, -2.51627)
+
+[node name="PlatformBlue1" parent="floor" instance=ExtResource("4_s7lpn")]
+transform = Transform3D(4.87857, 0, 0, 0, 1.08, 0, 0, 0, 4.87857, 18.9293, -1.68597, -17.5081)
+
+[node name="PlatformBlue2" parent="floor" instance=ExtResource("4_s7lpn")]
+transform = Transform3D(4.87857, 0, 0, 0, 1.08, 0, 0, 0, 4.87857, 18.9293, -1.68597, -3.87155)
+
+[node name="Ground" parent="floor" instance=ExtResource("5_jeu1v")]
+transform = Transform3D(3.9312, 0, 0, 0, 0.39312, 0, 0, 0, 3.9312, 20.0421, -1.31402, 7.15749)
+
+[node name="Ground2" parent="floor" instance=ExtResource("5_jeu1v")]
+transform = Transform3D(3.9312, 0, 0, 0, 0.39312, 0, 0, 0, 3.9312, 30.5969, -1.31402, 7.15749)
+
+[node name="Ground3" parent="floor" instance=ExtResource("5_jeu1v")]
+transform = Transform3D(3.9312, 0, 0, 0, 0.39312, 0, 0, 0, 3.9312, 41.9444, -1.31402, 7.15749)
+
+[node name="Death" type="Node3D" parent="."]
+
+[node name="Death1" type="Area3D" parent="Death"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6929, -2.66015, -27.4563)
+script = ExtResource("5_8agac")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Death/Death1"]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0)
+shape = SubResource("BoxShape3D_33f3p")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Death/Death1"]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0)
+mesh = SubResource("BoxMesh_b8e01")
+
+[node name="Death2" type="Area3D" parent="Death"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6929, -2.66015, -38.2089)
+script = ExtResource("5_8agac")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Death/Death2"]
+transform = Transform3D(100, 0, 0, 0, 20, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_33f3p")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Death/Death2"]
+transform = Transform3D(100, 0, 0, 0, 20, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_b8e01")
+
+[node name="Death3" type="Area3D" parent="Death"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6929, -2.66015, 12.1549)
+script = ExtResource("5_8agac")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Death/Death3"]
+transform = Transform3D(100, 0, 0, 0, 20, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_33f3p")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Death/Death3"]
+transform = Transform3D(100, 0, 0, 0, 20, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_b8e01")
+
+[node name="Death4" type="Area3D" parent="Death"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6929, -2.66015, 12.1549)
+script = ExtResource("5_8agac")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Death/Death4"]
+transform = Transform3D(1, 0, 0, 0, 20, 0, 0, 0, 100, 50.1686, 0, 0)
+shape = SubResource("BoxShape3D_33f3p")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Death/Death4"]
+transform = Transform3D(1, 0, 0, 0, 20, 0, 0, 0, 100, -34.7754, 0, 0)
+shape = SubResource("BoxShape3D_33f3p")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Death/Death4"]
+transform = Transform3D(1, 0, 0, 0, 20, 0, 0, 0, 100, -35.0299, 0, -13.1395)
+mesh = SubResource("BoxMesh_b8e01")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Death/Death4"]
+transform = Transform3D(1, 0, 0, 0, 20, 0, 0, 0, 100, 50.4286, 0, -13.1395)
+mesh = SubResource("BoxMesh_b8e01")
+
+[node name="hurtaxe" parent="." instance=ExtResource("8_p6vvf")]
+transform = Transform3D(0.0297656, -0.0442742, -0.497146, -0.139656, 0.477397, -0.050877, 0.479177, 0.141887, 0.0160538, 0.742223, 0.461214, -8.96411)
+visible = false
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+transform = Transform3D(-0.00487762, 0.0313195, 0.298321, 0.296427, 0.0461648, -5.39466e-10, -0.0459064, 0.294768, -0.031697, 0.76611, 0.86773, -9.27078)
+emitting = false
+amount = 30
+lifetime = 1.74
+one_shot = true
+speed_scale = 2.29
+local_coords = true
+mesh = SubResource("SphereMesh_on0cq")
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+gravity = Vector3(0, 0, -5)
+color = Color(0.65098, 0, 0.164706, 1)
+script = ExtResource("9_12wjq")
+
+[node name="axe_gimble" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.92608, -9.74456)
+script = ExtResource("8_aoo1w")
+
+[node name="axe" parent="axe_gimble" instance=ExtResource("8_qc70s")]
+transform = Transform3D(-0.162587, 1.04398, 9.94403, 9.88089, 1.53883, 1.14651e-08, -1.53021, 9.82558, -1.05657, 1.512, -2.05616, 0.47378)
+script = ExtResource("10_gvfou")
+
+[node name="Area3D" type="Area3D" parent="axe_gimble/axe"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="axe_gimble/axe/Area3D"]
+transform = Transform3D(0.3, -2.48353e-09, -6.20882e-10, 7.45058e-09, 0.1, 1.86265e-09, 9.31322e-10, -9.31323e-10, 0.2, -0.0250351, 0.00599188, 0.00636697)
+shape = SubResource("BoxShape3D_oddj4")
+
+[connection signal="body_entered" from="Death/Death1" to="Death/Death1" method="_on_body_entered"]
+[connection signal="body_entered" from="Death/Death2" to="Death/Death2" method="_on_body_entered"]
+[connection signal="body_entered" from="Death/Death3" to="Death/Death3" method="_on_body_entered"]
+[connection signal="body_entered" from="Death/Death4" to="Death/Death4" method="_on_body_entered"]
+[connection signal="finished" from="CPUParticles3D" to="CPUParticles3D" method="_on_finished"]
+[connection signal="body_entered" from="axe_gimble/axe/Area3D" to="Player" method="_on_area_3d_body_entered"]
