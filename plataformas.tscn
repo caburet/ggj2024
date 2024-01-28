@@ -1,0 +1,66 @@
+[gd_scene load_steps=13 format=3 uid="uid://xts44lqo2s12"]
+
+[ext_resource type="PackedScene" uid="uid://t0k6mbyf70ov" path="res://texture/Modelados_ambiente2.fbx" id="1_oyh6a"]
+[ext_resource type="Texture2D" uid="uid://c6hcw751a3pww" path="res://texture/Textura_general.png" id="2_3t5ky"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sck8f"]
+albedo_texture = ExtResource("2_3t5ky")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qkkqs"]
+albedo_texture = ExtResource("2_3t5ky")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xqrhi"]
+albedo_texture = ExtResource("2_3t5ky")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7s8lx"]
+albedo_texture = ExtResource("2_3t5ky")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sqq62"]
+albedo_texture = ExtResource("2_3t5ky")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cl8jc"]
+albedo_texture = ExtResource("2_3t5ky")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a1vkd"]
+albedo_texture = ExtResource("2_3t5ky")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o1oj8"]
+albedo_texture = ExtResource("2_3t5ky")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yr3g1"]
+albedo_texture = ExtResource("2_3t5ky")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0u2hy"]
+albedo_texture = ExtResource("2_3t5ky")
+
+[node name="Root Scene" instance=ExtResource("1_oyh6a")]
+
+[node name="Environment_001" parent="RootNode" index="0"]
+material_override = SubResource("StandardMaterial3D_sck8f")
+
+[node name="Environment" parent="RootNode" index="1"]
+material_override = SubResource("StandardMaterial3D_qkkqs")
+
+[node name="Environment_002" parent="RootNode" index="2"]
+material_override = SubResource("StandardMaterial3D_xqrhi")
+
+[node name="Environment_003" parent="RootNode" index="3"]
+material_override = SubResource("StandardMaterial3D_7s8lx")
+
+[node name="Environment_004" parent="RootNode" index="4"]
+material_override = SubResource("StandardMaterial3D_sqq62")
+
+[node name="Environment_005" parent="RootNode" index="5"]
+material_override = SubResource("StandardMaterial3D_cl8jc")
+
+[node name="Environment_006" parent="RootNode" index="6"]
+material_override = SubResource("StandardMaterial3D_a1vkd")
+
+[node name="Environment_007" parent="RootNode" index="7"]
+material_override = SubResource("StandardMaterial3D_o1oj8")
+
+[node name="Environment_008" parent="RootNode" index="8"]
+material_override = SubResource("StandardMaterial3D_yr3g1")
+
+[node name="Environment_009" parent="RootNode" index="9"]
+material_override = SubResource("StandardMaterial3D_0u2hy")

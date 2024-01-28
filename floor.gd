@@ -1,8 +1,6 @@
 extends Node3D
 
-var last_cam_pos_x
-var last_cam_pos_z
-var first=true
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

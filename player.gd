@@ -3,6 +3,7 @@ extends CharacterBody3D
 #https://godotengine.org/asset-library/asset/2120
 #https://polyhaven.com/a/excavated_soil_wall
 #https://godotengine.org/asset-library/asset/1467
+#Sound Effect from <a href="https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=41400">Pixabay</a>
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -58,4 +59,5 @@ func _on_area_3d_body_entered(body):
 	$"../hurtaxe".show()
 	$"../hurtaxe/AnimationPlayer".play("Hurt")
 	$"../floor/platform2/blood".show()
+	$"../deathsound".play()
 	pass # Replace with function body.

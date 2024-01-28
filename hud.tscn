@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://kptglg6j857u"]
+
+[ext_resource type="Script" path="res://hud.gd" id="1_rftql"]
+[ext_resource type="AudioStream" uid="uid://b78ochdy1x42c" path="res://music/dark-computer-talk-59011.mp3" id="1_ww7xc"]
+[ext_resource type="AudioStream" uid="uid://i0cltgayuun6" path="res://music/success-fanfare-trumpets-6185.mp3" id="3_v2isf"]
+
+[node name="root" type="Node2D"]
+script = ExtResource("1_rftql")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Intro" type="Label" parent="."]
+offset_left = 21.0
+offset_top = 567.0
+offset_right = 559.0
+offset_bottom = 590.0
+scale = Vector2(2, 2.4)
+text = "No de nuevo! Otra vez estoy en un juego de GGJ con assets genericos?"
+
+[node name="axe" type="Label" parent="."]
+visible = false
+offset_left = 21.0
+offset_top = 567.0
+offset_right = 559.0
+offset_bottom = 590.0
+scale = Vector2(2, 2.4)
+text = "Genial! Hachas voladoras! Que original!"
+
+[node name="death" type="Label" parent="."]
+visible = false
+offset_left = 21.0
+offset_top = 567.0
+offset_right = 559.0
+offset_bottom = 590.0
+scale = Vector2(2, 2.4)
+text = "Que onda con el sonido ese de muerte?"
+
+[node name="plat" type="Label" parent="."]
+visible = false
+offset_left = 21.0
+offset_top = 567.0
+offset_right = 559.0
+offset_bottom = 590.0
+scale = Vector2(2, 2.4)
+text = "\"The floor is lava\"?"
+
+[node name="win" type="Label" parent="."]
+visible = false
+offset_left = 27.0
+offset_top = 563.0
+offset_right = 565.0
+offset_bottom = 586.0
+scale = Vector2(2, 2.4)
+text = "Felicitaciones! Ya estas listo para poder jugar un juego de enserio!"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_ww7xc")
+autoplay = true
+
+[node name="AudioStreamPlayerWin" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_v2isf")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.018
+autostart = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 3.018
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_timeout"]

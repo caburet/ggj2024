@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlkwr4r16vow"]
+
+[ext_resource type="PackedScene" uid="uid://ceqkfr3vx8t5u" path="res://carpacolor.tscn" id="2_5me84"]
+
+[node name="Carpa" type="Node3D"]
+
+[node name="Root Scene2" parent="." instance=ExtResource("2_5me84")]
