@@ -6,7 +6,7 @@ extends CharacterBody3D
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
-const ANGULAR_SPEED= 5
+const ANGULAR_SPEED= 150
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var player_body= $"."
@@ -42,8 +42,8 @@ func _physics_process(delta):
 		velocity.z = direction.z * SPEED
 		#player_body.rotation.y= lerp(player_body.rotation.y,atan2(velocity.x,velocity.z), delta * ANGULAR_SPEED)
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, ANGULAR_SPEED)
+		velocity.z = move_toward(velocity.z, 0, ANGULAR_SPEED)
 	#if Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right"):
 		#player_body.rotation.y= lerp(player_body.rotation.y,atan2(-velocity.x,velocity.z), delta * ANGULAR_SPEED)
 

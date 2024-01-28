@@ -2,12 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://cmfbya6chld2r" path="res://player.tscn" id="1_u2qkd"]
 [ext_resource type="PackedScene" uid="uid://dg1fpf1qwihll" path="res://coin.tscn" id="2_ugldq"]
-[ext_resource type="PackedScene" path="res://PlatformBlue.tscn" id="4_s7lpn"]
+[ext_resource type="PackedScene" uid="uid://dfc0ecsjufu7v" path="res://PlatformBlue.tscn" id="4_s7lpn"]
 [ext_resource type="Texture2D" uid="uid://o7id01tv5ban" path="res://texture/blood.png" id="4_tfqro"]
 [ext_resource type="PackedScene" uid="uid://bj568o4jf8px0" path="res://platform.tscn" id="4_ufbeh"]
 [ext_resource type="Texture2D" uid="uid://f2xsnngquu1n" path="res://texture/excavated_soil_wall_disp_4k.png" id="5_4uml4"]
 [ext_resource type="Script" path="res://Death.gd" id="5_8agac"]
-[ext_resource type="PackedScene" path="res://PlatformRed.tscn" id="5_jeu1v"]
+[ext_resource type="PackedScene" uid="uid://0t0qb3qjq6my" path="res://PlatformRed.tscn" id="5_jeu1v"]
 [ext_resource type="Script" path="res://axe_gimble.gd" id="8_aoo1w"]
 [ext_resource type="PackedScene" uid="uid://1lmbms4plvn2" path="res://3DGodotRobot.glb" id="8_p6vvf"]
 [ext_resource type="PackedScene" uid="uid://byu2ec2yymx3v" path="res://models/German Battle Axe.fbx" id="8_qc70s"]
@@ -192,9 +192,10 @@ script = ExtResource("10_gvfou")
 transform = Transform3D(0.3, -2.48353e-09, -6.20882e-10, 7.45058e-09, 0.1, 1.86265e-09, 9.31322e-10, -9.31323e-10, 0.2, -0.0250351, 0.00599188, 0.00636697)
 shape = SubResource("BoxShape3D_oddj4")
 
+[node name="LevelAudio" type="AudioStreamPlayer" parent="."]
+
 [connection signal="body_entered" from="Death/Death1" to="Death/Death1" method="_on_body_entered"]
 [connection signal="body_entered" from="Death/Death2" to="Death/Death2" method="_on_body_entered"]
 [connection signal="body_entered" from="Death/Death3" to="Death/Death3" method="_on_body_entered"]
 [connection signal="body_entered" from="Death/Death4" to="Death/Death4" method="_on_body_entered"]
-[connection signal="finished" from="CPUParticles3D" to="CPUParticles3D" method="_on_finished"]
 [connection signal="body_entered" from="axe_gimble/axe/Area3D" to="Player" method="_on_area_3d_body_entered"]
