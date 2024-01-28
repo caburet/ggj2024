@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://level_1.gd" id="1_6205v"]
 [ext_resource type="PackedScene" uid="uid://cmfbya6chld2r" path="res://player.tscn" id="1_u2qkd"]
 [ext_resource type="PackedScene" uid="uid://dg1fpf1qwihll" path="res://coin.tscn" id="2_ugldq"]
-[ext_resource type="Script" path="res://floor.gd" id="3_qsox4"]
 [ext_resource type="PackedScene" uid="uid://dfc0ecsjufu7v" path="res://PlatformBlue.tscn" id="4_s7lpn"]
 [ext_resource type="Texture2D" uid="uid://o7id01tv5ban" path="res://texture/blood.png" id="4_tfqro"]
 [ext_resource type="PackedScene" uid="uid://bj568o4jf8px0" path="res://platform.tscn" id="4_ufbeh"]
@@ -439,12 +438,12 @@ transform = Transform3D(30, 0, 0, 0, -1.31134e-06, 30, 0, -30, -1.31134e-06, 27.
 
 [node name="Environment_017" parent="relleno" instance=ExtResource("29_ycrav")]
 transform = Transform3D(30, 0, 0, 0, -1.31134e-06, 30, 0, -30, -1.31134e-06, 27.2544, 0, -7.66662)
+[node name="LevelAudio" type="AudioStreamPlayer" parent="."]
 
 [connection signal="body_entered" from="Death/Death1" to="Death/Death1" method="_on_body_entered"]
 [connection signal="body_entered" from="Death/Death2" to="Death/Death2" method="_on_body_entered"]
 [connection signal="body_entered" from="Death/Death3" to="Death/Death3" method="_on_body_entered"]
 [connection signal="body_entered" from="Death/Death4" to="Death/Death4" method="_on_body_entered"]
-[connection signal="finished" from="CPUParticles3D" to="CPUParticles3D" method="_on_finished"]
 [connection signal="body_entered" from="axe_gimble/axe/Area3D" to="Player" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="Carpa/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="AxeArea" to="." method="_on_axe_area_body_entered"]
